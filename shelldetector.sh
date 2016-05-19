@@ -3,7 +3,7 @@
 
 #Whitelist - simply add the username in quotes below, use a pipe to delineate multiple users ex) whitelist="john|joe|jerry"
 whitelist="nagios"
-
+mailto=youremail@example.com
 #Name of script
 script=$0
 
@@ -28,6 +28,6 @@ echo >> $tmp
 echo "If you would like to allow a user normal shell, please add them to the whitelist field in this script: $script" >> $tmp
 
 #Email execution and cleanup
-mail -s "Normal Shell Detector `hostname`" support@312linux.com < $tmp
+mail -s "Normal Shell Detector `hostname`" $mailto < $tmp
 fi
  rm -f $tmp
